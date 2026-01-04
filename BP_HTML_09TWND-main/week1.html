@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 3 - Mid-fidelity prototypes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .kolom {
+      width: 400px;
+      margin: 5% auto;
+      padding: 20px;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-zinc-200 to-purple-500">
+
+  <!-- Header -->
+  <div class="h-[140px] bg-white flex flex-col justify-center pl-[40%] font-mono">
+    <h1 class="text-[50px] m-0">Week 1</h1>
+    <p class="text-gray-500 text-[20px] m-0">Nicky van Leeuwen</p>
+    <p class="text-gray-500 text-[18px] m-0">1GDM2</p>
+  </div>
+
+  <div class="mt-4 flex justify-between items-center px-4">
+  
+  <div class="flex gap-4">
+    <a href="index.html"
+       class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-purple-500 transition shadow-lg">
+      Homepage
+    </a>
+
+  </div>
+
+  <div class="flex gap-4">
+    <a href="week2.html"
+     class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-purple-500 transition shadow-lg">
+    Week 2
+  </a>
+  </div>
+
+</div>
+
+
+  <!-- Tekstkolom -->
+  <div class="kolom mt-10">
+    <h2 class="text-[25px] font-[Helvetica] mb-4">Introductie</h2>
+    <p class="text-[15px] font-[Helvetica]">
+      In de eerste week hebben we kennisgemaakt met de prototyping tool en kregen we een uitgebreide uitleg over de opdracht “Lost in Tra(i)nslation”. </p>
+      <br>
+    <p>deze week lag de focus op het verkennen van de opdracht en het begrijpen van het probleem. We kregen de taak om te brainstormen over mogelijke ideeën en concepten, waarbij we moesten nadenken over hoe wij dit probleem zouden kunnen aanpakken en oplossen. 
+      Dit hielp om een eerste richting te bepalen voor het verdere ontwerpproces.</p>
+      <br>
+      <p>
+      Ik ben op veldonderzoek geweest op Antwerpen Centraal om mijn geheugen op te frissen en te observeren hoe hun treinschermen eruitzien. 
+      Door dit van dichtbij te bekijken, kreeg ik een idee van hoe ik mijn schermen wil gaan maken.
+      </p>
+  
+  </div>
+
+<!-- Afbeeldingen naast elkaar met hover effect -->
+<div class="flex justify-center gap-6 pt-10">
+  <img src="4DF836EC-744A-426A-B9FC-BAC52BFD9A71_1_105_c.jpeg" alt="Foto 2"
+       class="w-58 h-60 cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+</div>
+
+
+  <!-- Overlay voor klikken op afbeeldingen -->
+  <div id="overlay" class="fixed inset-0 bg-black/70 hidden items-center justify-center">
+    <img id="overlay-img" class="max-w-[90%] max-h-[90%] rounded-lg" />
+  </div>
+
+  <!-- JavaScript voor overlay -->
+  <script>
+    const thumbs = document.querySelectorAll(".img-thumb");
+    const overlay = document.getElementById("overlay");
+    const overlayImg = document.getElementById("overlay-img");
+
+    thumbs.forEach(img => {
+      img.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        overlayImg.src = img.src; // laat de juiste afbeelding zien
+      });
+    });
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+    });
+  </script>
+
+ <footer class="mt-20 bg-white py-6">
+    <div class="flex justify-center">
+      <a href="https://github.com/Nickyvl09/Tailwind-09" target="_blank"
+         class="text-stone-400 text-lg font-semibold
+                hover:underline hover:text-stone-600 transition">
+      Github
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
