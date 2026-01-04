@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 4 - high-fidelity prototypes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .kolom {
+      width: 400px;
+      margin: 5% auto;
+      padding: 20px;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-zinc-200 to-amber-400">
+
+  <!-- Header -->
+  <div class="h-[140px] bg-white flex flex-col justify-center pl-[40%] font-mono">
+    <h1 class="text-[50px] m-0">Week 4</h1>
+    <p class="text-gray-500 text-[20px] m-0">Nicky van Leeuwen</p>
+    <p class="text-gray-500 text-[18px] m-0">1GDM2</p>
+  </div>
+
+  <div class="mt-4 flex justify-between items-center px-4">
+  
+  <!-- Linkerkant: Week 4 -->
+  <div class="flex gap-4">
+    <a href="index.html"
+       class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-amber-700 transition shadow-lg">
+      Homepage
+    </a>
+    <a href="week3.html"
+       class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-amber-700 transition shadow-lg">
+      Week 3
+    </a>
+  </div>
+
+  <!-- Rechterkant: Homepage + Week 2 -->
+  <div class="flex gap-4">
+    <a href="week5.html"
+     class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-amber-700 transition shadow-lg">
+    Week 5
+  </a>
+  </div>
+
+</div>
+
+
+  <!-- Tekstkolom -->
+  <div class="kolom mt-10">
+    <h2 class="text-[25px] font-[Helvetica] mb-4">High-fidelity prototypes</h2>
+    <p class="text-[15px] font-[Helvetica]">
+     In week 4 hebben we feedback gekregen op onze mid-fidelity schermen. Aan de hand van deze feedback ben ik begonnen met het maken van mijn high-fidelity schermen.
+    </p>
+    <br>
+    <p>
+     Tijdens dit proces merkte ik dat het soms lastig was om alles wat ik wilde laten zien overzichtelijk te houden. Daarom heb ik besloten meer gebruik te maken van iconen en minder informatie op het wagonscherm te plaatsen. Hierdoor wordt het scherm duidelijker en overzichtelijker voor de treinreizigers. Ik heb ook ervaren dat iconen niet alleen visueel aantrekkelijk zijn, maar ook helpen om informatie snel en gemakkelijk te begrijpen, vooral voor mensen die haast hebben. 
+     Door deze aanpassingen heb ik geleerd hoe belangrijk het is om informatie op een gebruiksvriendelijke manier te presenteren en dat soms minder meer is.
+    </p>
+  </div>
+
+<!-- Afbeeldingen naast elkaar met hover effect -->
+<div class="flex justify-center gap-6 pt-10">
+  <img src="high-fi.png" alt="Foto 1"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+  <img src="high-fi2.png" alt="Foto 2"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+  <img src="high-fi3.png" alt="Foto 3"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+</div>
+
+
+  <!-- Overlay voor klikken op afbeeldingen -->
+  <div id="overlay" class="fixed inset-0 bg-black/70 hidden items-center justify-center">
+    <img id="overlay-img" class="max-w-[90%] max-h-[90%] rounded-lg" />
+  </div>
+
+  <!-- JavaScript voor overlay -->
+  <script>
+    const thumbs = document.querySelectorAll(".img-thumb");
+    const overlay = document.getElementById("overlay");
+    const overlayImg = document.getElementById("overlay-img");
+
+    thumbs.forEach(img => {
+      img.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        overlayImg.src = img.src; // laat de juiste afbeelding zien
+      });
+    });
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+    });
+  </script>
+
+<footer class="mt-20 bg-white py-6">
+    <div class="flex justify-center">
+      <a href="https://github.com/Nickyvl09/Tailwind-09" target="_blank"
+         class="text-stone-400 text-lg font-semibold
+                hover:underline hover:text-stone-600 transition">
+      Github
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

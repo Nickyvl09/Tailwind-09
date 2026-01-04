@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 5 - introductie HTML & CSS </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .kolom {
+      width: 400px;
+      margin: 5% auto;
+      padding: 20px;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-zinc-100 to-cyan-400">
+
+  <!-- Header -->
+  <div class="h-[140px] bg-white flex flex-col justify-center pl-[40%] font-mono">
+    <h1 class="text-[50px] m-0">Week 5</h1>
+    <p class="text-gray-500 text-[20px] m-0">Nicky van Leeuwen</p>
+    <p class="text-gray-500 text-[18px] m-0">1GDM2</p>
+  </div>
+
+  <div class="mt-4 flex justify-between items-center px-4">
+  
+  <!-- Linkerkant: Week 4 -->
+  <div class="flex gap-4">
+    <a href="index.html"
+       class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-blue-700 transition shadow-lg">
+      Homepage
+    </a>
+    <a href="week4.html"
+       class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-blue-700 transition shadow-lg">
+      Week 4
+    </a>
+  </div>
+
+  <!-- Rechterkant: Homepage + Week 2 -->
+  <div class="flex gap-4">
+    <a href="week6.html"
+     class="bg-black text-white px-8 py-4 text-[30px] rounded hover:bg-blue-700 transition shadow-lg">
+    Week 6
+  </a>
+  </div>
+
+</div>
+
+
+  <!-- Tekstkolom -->
+  <div class="kolom mt-10">
+    <h2 class="text-[25px] font-[Helvetica] mb-4">Introductie HTML & CSS</h2>
+    <p class="text-[15px] font-[Helvetica]">
+     Deze week hebben we een eerste introductie gehad in HTML. 
+     Tijdens deze les hebben we onze high-fidelity schermen in ChatGPT gezet en gevraagd of er HTML-code van gegenereerd kon worden. 
+     Op deze manier maakten we kennis met hoe een ontwerp kan worden omgezet naar code en kregen we een beter beeld van de mogelijkheden en basisprincipes van HTML.
+    </p>
+    <br>
+    <p>
+        Ik heb een link toegevoegd naar een HTML-pagina die door ChatGPT is gemaakt aan de hand van mijn high-fidelity treinschermen. 
+        Daarnaast heb ik ook foto’s toegevoegd die ChatGPT heeft gegenereerd op basis van mijn treinschermen.
+    </p>
+    <p>
+      <a href="file:///Users/nickyvanleeuwen/Downloads/station-schermen.html" target="_blank"
+         class="text-stone-500 text-lg font-semibold
+                hover:underline hover:text-stone-800 transition">
+      Een HTML pagina gemaakt door ChatGPT
+      </a>
+    </p>
+  </div>
+
+<!-- Afbeeldingen naast elkaar met hover effect -->
+<div class="flex justify-center gap-6 pt-10">
+  <img src="chatGPT.png" alt="Foto 1"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+  <img src="chatGPT2.png" alt="Foto 2"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+  <img src="chatGPT3.png" alt="Foto 3"
+       class="w-48 h-auto cursor-pointer rounded-lg img-thumb 
+              transform transition duration-300 hover:scale-105 hover:brightness-110">
+</div>
+
+
+  <!-- Overlay voor klikken op afbeeldingen -->
+  <div id="overlay" class="fixed inset-0 bg-black/70 hidden items-center justify-center">
+    <img id="overlay-img" class="max-w-[90%] max-h-[90%] rounded-lg" />
+  </div>
+
+  <!-- JavaScript voor overlay -->
+  <script>
+    const thumbs = document.querySelectorAll(".img-thumb");
+    const overlay = document.getElementById("overlay");
+    const overlayImg = document.getElementById("overlay-img");
+
+    thumbs.forEach(img => {
+      img.addEventListener("click", () => {
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        overlayImg.src = img.src; // laat de juiste afbeelding zien
+      });
+    });
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      overlay.classList.remove("flex");
+    });
+  </script>
+
+<footer class="mt-20 bg-white py-6">
+    <div class="flex justify-center">
+      <a href="https://github.com/Nickyvl09/Tailwind-09" target="_blank"
+         class="text-stone-400 text-lg font-semibold
+                hover:underline hover:text-stone-600 transition">
+      Github
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
